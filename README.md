@@ -1,16 +1,17 @@
-# borderify
+## Translator
 
-**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+A translator add on for Firefox for my personal use, although you can use it too. Only supports some websites and some elements on those sites.
 
-## What it does
+## Supported websites
 
-This extension just includes:
+Currently Bilibili and Dodo.
 
-* a content script, "borderify.js", that is injected into any pages
-under "mozilla.org/" or any of its subdomains
+## How to Install
 
-The content script draws a border around the document.body.
+On the github page, click "Code" and then "Download ZIP", extract the ZIP somewhere and then in Firefox go to "about:debugging" then click "This Firefox" and then "Load Temporary Add-on..." and find the files you just extracted and load the "manifest.json" file.
 
-## What it shows
+## How to Use
 
-* how to inject content scripts declaratively using manifest.json
+Move your mouse over an element and press F1 to translate it, press F1 again to untranslate it. You can also press F2 to update the extension.
+
+
