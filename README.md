@@ -1,2 +1,16 @@
-# TranslationFirefox
-Add on for Firefox for translating web pages. Press F1 with the mouse over a supported element on a supported webite to translate it and F1 again to untranslate it. Press F2 to update.
+# borderify
+
+**This add-on injects JavaScript into web pages. The `addons.mozilla.org` domain disallows this operation, so this add-on will not work properly when it's run on pages in the `addons.mozilla.org` domain.**
+
+## What it does
+
+This extension just includes:
+
+* a content script, "borderify.js", that is injected into any pages
+under "mozilla.org/" or any of its subdomains
+
+The content script draws a border around the document.body.
+
+## What it shows
+
+* how to inject content scripts declaratively using manifest.json
