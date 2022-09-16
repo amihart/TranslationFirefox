@@ -1,72 +1,5 @@
-/*
-Just draw a border round the document.body.
-*/
-
-var APIServer = "http://r3-13.com/translate.php";
+var APIServer = "http://r3-13.com";
 var nodesToTranslate;
-
-
-
-if (window.location.href.search("bilibili.com") >= 0)
-    nodesToTranslate = 
-    [
-        ".v-popover-wrap span",
-        ".right-entry-item span",
-        ".entry-title span",
-        "span.icon-title",
-        "a.channel-link",
-        ".sub-item .name",
-        ".chat-item.danmaku-item span",
-        ".chat-item.common-danmuku-msg div",
-        "div.chat-item span",
-        "div.small-title",
-        ".brush-prompt span",
-        ".nav-item span.label",
-        "div.chat-item.convention-msg",
-        "span.gift-info-title",
-        "div.gift-info-desc",
-        ".info p.label.live-skin-main-text",
-        ".tab-candidate span",
-        "div.room-introduction-content",
-        ".original-card-content div.content-full",
-        "span.suffix-text",
-        "div.card.system-item",
-        "span.menu-title",
-        ".reply-wrap .con .text",
-        ".reply-wrap .con .reply",
-        ".reply-wrap .con .reply-time",
-        "a.more-link",
-        ".clearfix li",
-        "div.bili-dyn-time",
-        "div.bili-dyn-live-users__header",
-        "div.bili-dyn-my-info__stat__item__label",
-        "div.bili-dyn-list-tabs__item",
-        "div.bili-dyn-list__notification",
-        "div.bili-dyn-action",
-        ".comment-emoji span.text",
-        ".dynamic-repost label",
-        ".bili-dyn-title span",
-        ".bili-rich-text__content span",
-        "div.bili-rich-text__action",
-        "span.dyn-orig-author__action",
-        "span.dyn-orig-author__name",
-        "div.relevant-topic",
-        "span.topic-panel__nav-title"
-    ];
-else if (window.location.href.search("imdodo.com") >= 0)
-    nodesToTranslate = 
-    [
-        ".channel h1",
-        ".group h1",
-        ".name-info span",
-        ".page-room .top h1",
-        ".df-msg-item p",
-        ".nick_wrap span",
-        ".nickname-wrapper span",
-        ".count-box .item .desc",
-        ".user-list h5"
-    ];
-
 
 function getNodes(n)
 {
@@ -79,10 +12,7 @@ function getNodes(n)
     return tmp;
 }
 
-var nodesToEnable = ".channel h1:not([translated=translated]";
 var processingTranslation = false;
-var errorCounter = 0;
-
 var doTranslate = function(txt, cb)
 {
     var cache = localStorage.getItem("TranslationCache");
@@ -95,7 +25,7 @@ var doTranslate = function(txt, cb)
     }
 
     var http = new XMLHttpRequest();
-    var url = 'http://r3-13.com/translate.php';
+    var url = APIServer + '/translate.php';
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'text/html');
 
@@ -161,7 +91,7 @@ var nodeData = localStorage.getItem("TranslationWebsiteData");
 if (nodeData == null || nodeData == "")
 {
     var http = new XMLHttpRequest();
-    var url = 'http://r3-13.com/website.php';
+    var url = APIServer + '/website.php';
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'text/html');
     http.onreadystatechange = function()
