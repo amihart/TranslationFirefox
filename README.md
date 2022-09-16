@@ -23,3 +23,15 @@ the required files are located in the Server folder. First, you have to modify t
 "permissions" section in "manifest.json". You then want to edit the "APIServer" variable at the top of "translator.js" to also point to this local IP. 
 Finally, you need to setup a MariaDB/MySQL cache. This requires a table as shown below, and you will need to modify the connection information in 
 "Server/translate.php". Of course, also make sure php as well as translate-shell is installed.
+
+```
+API.GenericCache
++---------+----------+------+-----+---------+----------------+
+| Field   | Type     | Null | Key | Default | Extra          |
++---------+----------+------+-----+---------+----------------+
+| RowID   | int(11)  | NO   | PRI | NULL    | auto_increment |
+| Service | longtext | YES  |     | NULL    |                |
+| Input   | longtext | YES  |     | NULL    |                |
+| Output  | longtext | YES  |     | NULL    |                |
++---------+----------+------+-----+---------+----------------+
+```
