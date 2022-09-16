@@ -1,5 +1,5 @@
 <?php
-	$pw = file_get_contents("~/.dbpw.cache");
+	$pw = trim(file_get_contents("/.pwd/cache@localhost"));
 	$conn = mysqli_connect('localhost', 'cache', $pw);
 	if (!$conn)
 	{
