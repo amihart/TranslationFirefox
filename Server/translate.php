@@ -1,5 +1,6 @@
 <?php
-	$conn = mysqli_connect('localhost', 'cache', 'AFLK#$FLK#$F:KFL#$!!)KG!RL:!!');
+	$pw = file_get_contents("~/.dbpw.cache");
+	$conn = mysqli_connect('localhost', 'cache', $pw);
 	if (!$conn)
 	{
 		echo "Error: " . mysqli_connect_error();
