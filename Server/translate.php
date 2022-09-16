@@ -68,16 +68,4 @@
 		return $ret;
 	}
 
-
-
-//	$a = "test";
-
-//	echo $a;
-
-/*
-	$a = file_get_contents("php://input");
-	file_put_contents(".tmp", $a);
-	$b = shell_exec("trans :en file://.tmp -b | sed -e 's/u003d/=/g' -e 's/u003c/</g' -e 's/u003e/>/g'");
-	echo $b
-*/
 ?>
