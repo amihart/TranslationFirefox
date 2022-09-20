@@ -104,7 +104,6 @@ if (nodeData == null || nodeData == "")
             {
                 nodeData = http.responseText.trim();
                 localStorage.setItem("TranslationWebsiteData", nodeData);
-                console.log(nodeData);
                 nodesToTranslate = nodeData.split("\n");
                 translatorStarted = true;
             }
