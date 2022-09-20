@@ -15,14 +15,16 @@ function getNodes(n)
 var processingTranslation = false;
 var doTranslate = function(txt, cb)
 {
-    var cache = localStorage.getItem("TranslationCache");
+    //Get rid of translation cache
+
+    /*var cache = localStorage.getItem("TranslationCache");
     cache = cache == null ? {} : JSON.parse(cache);
     var tid = btoa(escape(txt));
     if (cache[tid] != undefined)
     {
         cb(cache[tid]);
         return;
-    }
+    }*/
 
     var http = new XMLHttpRequest();
     var url = APIServer + '/translate.php';
@@ -35,8 +37,8 @@ var doTranslate = function(txt, cb)
         {
             if (http.status == 200)
             {
-                cache[tid] = http.responseText;
-                localStorage.setItem("TranslationCache", JSON.stringify(cache));
+                /*cache[tid] = http.responseText;
+                localStorage.setItem("TranslationCache", JSON.stringify(cache));*/
                 cb(http.responseText);
             }
             else
@@ -102,6 +104,7 @@ if (nodeData == null || nodeData == "")
             {
                 nodeData = http.responseText.trim();
                 localStorage.setItem("TranslationWebsiteData", nodeData);
+                console.log(nodeData);
                 nodesToTranslate = nodeData.split("\n");
                 translatorStarted = true;
             }
